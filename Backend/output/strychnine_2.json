@@ -1,0 +1,14 @@
+{
+    "arrow0": {
+        "prev_mol": "CC.CC/C=C(\\C)CN1CCC23c4ccccc4N(C)C2C(C=O)=CCC13",
+        "text": [
+            [
+                ""
+            ],
+            [
+                ""
+            ]
+        ],
+        "post_mol": "molecule2"
+    }
+}

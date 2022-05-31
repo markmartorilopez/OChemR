@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <!-- <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>IBM ViT Results</title>
+    <style>
+        
+        html, body{
+            height:100%;
+            width: 100%;
+            background-color:rgb(235, 235, 235);
+        }
+        .vertical-menu {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        background-color: white;
+        overflow-x: hidden;
+        }
+        .vertical-menu button {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .vertical-menu button:hover {
+        background-color: #dddddd;
+        }
+        .vertical-menu a {
+        background-color: white;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        }
+
+        .vertical-menu a:hover {
+        background-color: #dddddd;
+        }
+
+        .vertical-menu a.active {
+        background-color: #dddddd;
+        color: black;
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #111;
+        }
+
+        lr {
+            float: right
+        }
+        lr a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        lr a:hover {
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          font-family: sans-serif;
+          font-size: 12px;
+          text-align: center;
+          padding: 17px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #333;
+        }
+        .btn {
+        background-color: #111;
+        border: none;
+        color: white;
+        padding: 12px 14px;
+        font-size: 14px;
+        cursor: pointer;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+        background-color: #333;
+        }
+
+        h2:after {
+        content:' ';
+        display:block;
+        border:2px solid hsl(221, 86%, 51%);
+        border-radius:4px;
+        -webkit-border-radius:4px;
+        -moz-border-radius:4px;
+        box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+        -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+        -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    }
+
+        .split {
+        height: 100%;
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        overflow-x: hidden;
+        }
+
+        /* Control the left side */
+        .left {
+        left: 20%;
+        padding: 0px 20px;
+        background-color: rgb(235, 235, 235);
+        }
+
+        /* Control the right side */
+        .right {
+        left: 60%;
+        background-color: rgb(235, 235, 235);
+        }
+
+        /* If you want the content centered horizontally and vertically */
+        .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+        width: 150px;
+        border-radius: 50%;
+        }
+        
+</style>
+</head>
+<body style="margin-left:0%;margin-top:0%;margin-right:0%;margin-bottom:0%;"> 
+        <ul>
+          <li><button class="btn"><i class="fa fa-times"></i></button></li>
+          <li><a class="active" href="#home">IBM <strong> RXN</strong></a></li>
+          <!-- <lr><a href="#login">Log in</a></lr> -->
+          <lr><button class="btn"><i class="fa fa-user"></i></button></lr>
+        </ul>
+        
+    <div class="vertical-menu">
+        <a href="#"><i class = "fa fa-home"></i> Home</a>
+        <a href="#" class="active"><i class = "fa fa-object-group"></i> Vision Transformer</a>
+        <a href="#"><i class = "fa fa-folder-open-o"></i> Projects</a>
+    </div>
+
+    <div style = "margin-left:25%;margin-top:5%;margin-right:5%;margin-bottom:0%;">
+        <h2>Results</h2>
+        <!-- UPLOAD IMAGE -->
+        <!-- <form method="POST" action =""> -->
+            <p> Detections found with threshold = 0.99</p>
+            <img src="../static/images/output/a.png" id = "canvas_output" width = "500">
+            <!-- <h3 style = "display: none;" id = "inference" required>Run inference</h3>
+            <button id="runbutton" value = "Submit" style="cursor: pointer; display:none"><i class = "fa fa-file-play"></i></button> -->
+        <!-- </form> -->
+    </div>
+    </div>
+        
+        <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('canvas_input');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            document.getElementById('inference').style.display = "block";
+            document.getElementById('runinference').style.display = "block";
+            document.getElementById('runbutton').style.display = "block";
+            
+        };
+
+        var displayDetections = function(event) {
+            var image = document.getElementById('results');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            document.getElementById('visualize').style.display = "block";
+            document.getElementById('OCR').style.display = "block";
+
+        };
+        </script>
+        <!-- AND VISUALIZE IT -->
+
+</body>
+</html>
+
+
+

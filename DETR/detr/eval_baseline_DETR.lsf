@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 4
+#BSUB -gpu "num=1"
+#BSUB -M 32876
+#BSUB -e "/dccstor/arrow_backup/DETRerr/evalDETR.sterr.%J"
+#BSUB -o "/dccstor/arrow_backup/DETRlogs/evalDETR.stdout.%J"
+#BSUB -J "cocoEvalDETR"
+
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+### From Scratch:
+# python main.py --dataset_file "arrow" --arrow_path "/dccstor/arrow_backup/images/" --lr "1e-5" --epochs "300"
+
+### From own pre-trained weights:
+# python main.py --dataset_file "arrow" --arrow_path "/dccstor/arrow_backup/images/" --lr "1e-5" --epochs "300" --resume "output/checkpoint.pth"
+
+### From COCO pre-trained weights:
+# python main.py --dataset_file "arrow" --arrow_path "/dccstor/arrow_backup/images/" --lr "1e-5" --epochs "300" --output_dir "output_COCO" --resume "weights/detr-r50-e632da11.pth"
+
+# python main.py --dataset_file "arrow" --arrow_path "/dccstor/arrow_backup/images/" --lr "1e-5" --epochs "300" --resume "output_COCO/checkpoint.pth"
+
+
+### LETS TRY WITH THIS ONE:
+python main.py --batch_size 2 --no_aux_loss --eval --resume "output/checkpoint.pth" --arrow_path "/dccstor/arrow_backup/images/" --output_dir "output/"

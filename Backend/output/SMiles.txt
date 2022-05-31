@@ -1,0 +1,11 @@
+
+
+
+
+
+
+Image test29.png
+
+SMILES:
+CCCC#N.CCCC[Al](CC(C)C)CC(C)C>>CCCC#[N+3]1(CCC)C(C)(C)C[AlH2]1(O)CC(C)C>>CCC/C=N/[Al](CC(C)C)CC(C)C>>CCCC=O
+

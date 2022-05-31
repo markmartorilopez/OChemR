@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#BSUB -q x86_6h
+#BSUB -n 1
+#BSUB -gpu "num=1"
+### BSUB -o "logs/new_dataset.stdout.%J"
+### BSUB -e "err/new_dataset.sterr.%J"
+#BSUB -J "arrow-new-dataset"
+
+
+### source /etc/profile.d/modules.sh
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate arrow
+
+python main.py -l logs -p params -li True -cr 400 -ph 0.5 -pv 0.5 -pbr 0.2 -b True -sk False -cl False
+

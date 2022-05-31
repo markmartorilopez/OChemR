@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 2
+#BSUB -gpu "num=2"
+#BSUB -M 32876
+#BSUB -e "err/d2train.sterr.%J"
+#BSUB -o "logs/d2train.stdout.%J"
+#BSUB -J "DETR-d2-train"
+
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+### python main.py --dataset_file "mycoco" --coco_path "data/" --output_dir "output" --lr "1e-5" --epochs "300"
+# python train_net.py --config configs/detr_256_6_6_torchvision.yaml --num-gpus 2
+python train_net.py --config configs/R50_SOTR.yaml --num-gpus 2
+
+### 
+### ------------ INFERENCE FOLLOWING --------
+### 
+### python test_detr.py # Inference

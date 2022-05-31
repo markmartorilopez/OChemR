@@ -1,0 +1,12 @@
+{
+    "arrow0": {
+        "prev_mol": "CP.O=C(NN(P)c1ccccc1)Oc1ccccc1",
+        "text": [
+            "molecule2",
+            [
+                ""
+            ]
+        ],
+        "post_mol": "CP.O=c1[nH]n(P)c2ccccc12"
+    }
+}

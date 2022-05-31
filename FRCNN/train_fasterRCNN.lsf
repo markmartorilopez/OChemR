@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#BSUB -q x86_12h
+#BSUB -n 4
+#BSUB -gpu "num=2"
+#BSUB -M 32768
+#BSUB -e "err/trainFasterRCNN.sterr.%J"
+#BSUB -o "logs/trainFasterRCNN.stdout.%J"
+#BSUB -J "FasterRCNN-train"
+
+python train_FRCNN.py

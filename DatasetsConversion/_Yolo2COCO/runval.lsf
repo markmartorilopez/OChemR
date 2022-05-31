@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 2
+#BSUB -gpu "num=1"
+#BSUB -M 1024
+### BSUB -e "/dccstor/arrow_backup/faster_err/trainFasterRCNN.sterr.%J"
+### BSUB -o "/dccstor/arrow_backup/faster_logs/trainFasterRCNN.stdout.%J"
+#BSUB -J "DCval"
+
+
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+python main.py --path /dccstor/arrow_backup/images/val/ --output json_annotval.json

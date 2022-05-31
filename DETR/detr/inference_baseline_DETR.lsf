@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 1
+#BSUB -gpu "num=1"
+#BSUB -M 9092
+#BSUB -e "err/inferenceDETR.sterr.%J"
+#BSUB -o "logs/inferenceDETR.stdout.%J"
+#BSUB -J "inferenceDETR"
+
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+### From Scratch or own-pretrained:
+# python3 test_labelled.py --data_path /dccstor/arrow_backup/images/test/ --resume output/checkpoint.pth --thresh 0.98
+
+### From COCO pre-trained weights:
+# python3 test_labelled.py --data_path /dccstor/arrow_backup/images/test/ --resume output_COCO/checkpoint.pth
+
+python3 test_DETR.py --data_path /dccstor/arrow_backup/images/val/ --resume output/loss1_7.pth
+# python3 attention_DETR.py --resume output/loss1_7.pth

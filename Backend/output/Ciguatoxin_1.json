@@ -1,0 +1,14 @@
+{
+    "arrow1": {
+        "prev_mol": "molecule2",
+        "text": [
+            [
+                ""
+            ],
+            [
+                ""
+            ]
+        ],
+        "post_mol": "molecule3"
+    }
+}

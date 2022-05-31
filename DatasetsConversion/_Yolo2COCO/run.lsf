@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 2
+#BSUB -gpu "num=1"
+#BSUB -M 32876
+#BSUB -e "err/conversion_run.sterr.%J"
+#BSUB -o "logs/conversion_run.sterr.%J"
+#BSUB -J "DatasetConversion"
+
+
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+python main.py --path /dccstor/arrow_backup/images/train/ --output json_annotation.json

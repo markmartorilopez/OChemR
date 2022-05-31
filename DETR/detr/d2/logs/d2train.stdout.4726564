@@ -1,0 +1,67 @@
+Command Line Args: Namespace(config_file='configs/R50_SOTR.yaml', dist_url='tcp://127.0.0.1:61206', eval_only=False, machine_rank=0, num_gpus=2, num_machines=1, opts=[], resume=False)
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@cccxc414.pok.ibm.com>
+Subject: Job 4726564: <DETR-d2-train> in cluster <cccCluster> Exited
+
+Job <DETR-d2-train> was submitted from host <cccxl010.pok.ibm.com> by user <markmartori> in cluster <cccCluster> at Thu Mar 31 15:13:10 2022
+Job was executed on host(s) <2*cccxc414.pok.ibm.com>, in queue <x86_1h>, as user <markmartori> in cluster <cccCluster> at Thu Mar 31 15:13:12 2022
+</u/markmartori> was used as the home directory.
+</u/markmartori/detr/d2> was used as the working directory.
+Started at Thu Mar 31 15:13:12 2022
+Terminated at Thu Mar 31 15:13:31 2022
+Results reported at Thu Mar 31 15:13:31 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 2
+#BSUB -gpu "num=2"
+#BSUB -M 32876
+#BSUB -e "err/d2train.sterr.%J"
+#BSUB -o "logs/d2train.stdout.%J"
+#BSUB -J "DETR-d2-train"
+
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+### python main.py --dataset_file "mycoco" --coco_path "data/" --output_dir "output" --lr "1e-5" --epochs "300"
+# python train_net.py --config configs/detr_256_6_6_torchvision.yaml --num-gpus 2
+python train_net.py --config configs/R50_SOTR.yaml --num-gpus 2
+
+### 
+### ------------ INFERENCE FOLLOWING --------
+### 
+### python test_detr.py # Inference
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   12.16 sec.
+    Max Memory :                                 4697 MB
+    Average Memory :                             2917.00 MB
+    Total Requested Memory :                     1048.00 MB
+    Delta Memory :                               -3649.00 MB
+    Max Swap :                                   -
+    Max Processes :                              7
+    Max Threads :                                25
+    Run time :                                   24 sec.
+    Turnaround time :                            21 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <err/d2train.sterr.4726564> for stderr output of this job.
+

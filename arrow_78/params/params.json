@@ -1,0 +1,12 @@
+{
+	"dataset_params": { 
+				"train_path" : "/dccstor/arrow_backup/images/train/",
+				"labelled_path" : "/dccstor/arrow_backup/labelled_images/",
+				"img_width" : [512,650,800,1024],
+			    "img_height" : [512,650,800,1024],
+			    "molecules_sizes" : [3,6,8,10],
+			    "molecules_rotations" : [0,30,100,330],
+			    "num_molecules_per_reaction" : 12,
+			    "num_reactions_per_epoch" : 12500,
+			    "epochs" : 4}
+}

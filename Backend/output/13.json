@@ -1,0 +1,7 @@
+{
+    "arrow1": {
+        "prev_mol": "C=[NH+]O",
+        "text": [],
+        "post_mol": "C=C(CC)C1CCCCC1N[C@@H]1N[C@@H]1N"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "arrow11": {
+        "prev_mol": "CCCC#N.CCCC[Al](CC(C)C)CC(C)C",
+        "text": ["NO-NH2 (4.00 equiv) EtOH, 40 C, 89%"],
+        "post_mol": "CCCC#[N+3]1(CCC)C(C)(C)C[AlH2]1(O)CC(C)C"
+    },
+    "arrow5": {
+        "prev_mol": "CCCC#[N+3]1(CCC)C(C)(C)C[AlH2]1(O)CC(C)C",
+        "text": [
+            "CCC/C=N/[Al](CC(C)C)CC(C)C",
+            [
+                "PRICAT (20 wt%) PiV2O (0.1 equiv), H2 (3 atm)"
+            ]
+        ],
+        "post_mol": "CCC/C=N/[Al](CC(C)C)CC(C)C"
+    },
+    "arrow7": {
+        "prev_mol": "CCC/C=N/[Al](CC(C)C)CC(C)C",
+        "text": [
+            [
+                "NaOH (1.75 equiv)"
+            ]
+        ],
+        "post_mol": "CCCC=O"
+    }
+}

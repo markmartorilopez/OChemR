@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# BSUB -q x86_1h
+#BSUB -n 2
+#BSUB -gpu "num=1"
+#BSUB -M 4096
+#BSUB -e "err/minf.sterr.%J"
+#BSUB -o "logs/minf.stdout.%J"
+#BSUB -J "DETR-inferencee"
+
+### "/dccstor/arrow_backup/logs/inferenceDETR.stdout.%J"
+### source /etc/profile.d/modules.sh
+
+### ml use /opt/share/modulefiles/x86_64/
+### ml conda/miniconda3/4.9.2
+### conda activate detectron
+
+### python inference_detr.py
+python test_detr.py

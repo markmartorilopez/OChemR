@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 2
+#BSUB -M 32768
+#BSUB -gpu "num=1"
+#BSUB -e "err/eval1.sterr.%J"
+#BSUB -o "logs/eval1.stdout.%J"
+#BSUB -J "FRCNN_eval"
+
+python eval_FRCNN.py

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#BSUB -q x86_12h
+#BSUB -n 4
+#BSUB -gpu "num=2"
+#BSUB -M 32768
+#BSUB -e "err/trainRetinaNet.sterr.%J"
+#BSUB -o "logs/trainRetinaNet.stdout.%J"
+#BSUB -J "RetinaNet_train"
+
+
+python train_RetinaNet.py # Training

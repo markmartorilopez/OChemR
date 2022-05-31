@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 1
+#BSUB -M 4000
+#BSUB -gpu "num=1"
+#BSUB -e "err/testFRCNN.sterr.%J"
+#BSUB -o "logs/testFRCNN.stdout.%J"
+#BSUB -J "FRCNN test"
+
+python test_FRCNN.py

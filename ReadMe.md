@@ -4,7 +4,7 @@
   </a>
 
   <p align="center">
-    Digitize your chemical reaction image into a mahcine-readable representation.
+    Digitize your chemical reaction image into a machine-readable representation.
     <br>
     <a>V.0</a>
     ·

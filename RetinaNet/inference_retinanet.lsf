@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#BSUB -q x86_1h
+#BSUB -n 1
+#BSUB -M 4000
+#BSUB -gpu "num=1"
+#BSUB -e "err/testRetinaNet.sterr.%J"
+#BSUB -o "logs/testRetinaNet.stdout.%J"
+#BSUB -J "RetinaNet test"
+
+
+python test_RetinaNet.py --data_path /dccstor/arrow_backup/images/val/ --resume output/model_final.pth

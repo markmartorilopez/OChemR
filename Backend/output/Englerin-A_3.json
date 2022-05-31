@@ -1,0 +1,36 @@
+{
+    "arrow8": {
+        "prev_mol": "C.C=CCC[C@]1(C)CC(=C)[C@](C)(C(C)C)C[C@@H](C)C1(C)C.CC",
+        "text": [
+            "C.C.C=C1C2=C(C)CC[C@@]2(C)C(C)(C)[C@H](C)CC1(C)C(C)C",
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                "---"
+            ]
+        ],
+        "post_mol": "C=C(C)CC[C@]1(C)C[C@@H]2C[C@@]2(C(C)C)C[C@@H](C)C1(C)C"
+    },
+    "arrow0": {
+        "prev_mol": "C=C(C)CC[C@]1(C)C[C@@H]2C[C@@]2(C(C)C)C[C@@H](C)C1(C)C",
+        "text": [
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ]
+        ],
+        "post_mol": "C.C.C=C1C2=C(C)CC[C@@]2(C)C(C)(C)[C@H](C)CC1(C)C(C)C"
+    }
+}
