@@ -140,6 +140,7 @@ The synthetic training data set was benchmarked with well-established CNNs and a
     <img src="github/images/perclass.png" alt="mAP per class per model" width=300 height=220>
   </a>
 </p>
+
 ## Contributing
 DETR - https://github.com/facebookresearch/detectron2
 
