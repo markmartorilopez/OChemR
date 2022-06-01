@@ -74,6 +74,7 @@ Syntetic Dataset consisting of 50k images that are randomly created to simulate 
 * Dropout: 0.1
 
 ##### Multi Head Self-Attention
+Encoder-decoder attention files can be found in the Backend-Output-detections path.
 <p align="center">
   <a>
     <img src="github/images/attention.png" alt="Encoder Attention at random points of the image." width=575 height=250>
@@ -89,7 +90,7 @@ Towards recognizing the information present in the molecule objects detected, we
 
 <p align="center">
   <a>
-    <img src="github/images/Molvec.png" alt="Detected objects with ViT" width=480 height=220>
+    <img src="github/images/Molvec.png" alt="Detected molecules with ViT" width=480 height=220>
   </a>
 </p>
 
@@ -98,7 +99,7 @@ In pursuance of preserving the real path of the whole reaction, the direction of
 
 <p align="center">
   <a>
-    <img src="github/images/arrows.png" alt="Detected objects with ViT" width=400 height=220>
+    <img src="github/images/arrows.png" alt="Detected arrows with ViT" width=400 height=220>
   </a>
 </p>
 
@@ -134,6 +135,11 @@ C=Cc1ccc2[nH]cc(C[C@H](N)C(=O)OF)c2c1>>C/C=C(\\C)CN1C2CCC(=O)[C@]1(C)Cc1c2[nH]c2
 
 ## Benchmarking
 The synthetic training data set was benchmarked with well-established CNNs and a feature detector approach. As a one-stage detector, RetinaNet. As a two-stages detector, Faster-RCNN. However, DETR with default training schedules performed slightly better. Check the metrics comparison in the folder: plots.
+<p align="center">
+  <a>
+    <img src="github/images/perclass.png" alt="mAP per class per model" width=300 height=220>
+  </a>
+</p>
 ## Contributing
 DETR - https://github.com/facebookresearch/detectron2
 
