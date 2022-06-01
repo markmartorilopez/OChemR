@@ -50,14 +50,14 @@ A DETR model with a ResNet50 backbone is used to detect the objects in the image
 ##### Input Image
 <p align="center">
   <a>
-    <img src="github/images/reaction.png" alt="Input Image" width=275 height=275>
+    <img src="github/images/reaction.png" alt="Input Image" width=300 height=275>
   </a>
 </p>
 
 ##### Detections
 <p align="center">
   <a>
-    <img src="github/images/detection.png" alt="Detected objects with ViT" width=275 height=275>
+    <img src="github/images/detection.png" alt="Detected objects with ViT" width=300 height=275>
   </a>
 </p>
 
