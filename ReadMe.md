@@ -23,6 +23,7 @@
 
 - [Description](#Description)
 - [Step by step](#step-by-step)
+- [Benchmarking](#benchmarking)
 - [Installation](#installation) Coming soon... (6-6-22)
 - [Models](#models) Coming soon... (6-6-22)
 - [Contributing](#contributing)
@@ -102,6 +103,9 @@ In pursuance of preserving the real path of the whole reaction, the direction of
 </p>
 
 ## Output Files
+A randomly selected small sample of the test set is evaluated under the folders "test_results" of each approach. DETR, FRCNN and RetinaNet. Check qualitatevly the performance of the models in there.
+
+Aggregating the aforementioned steps outcome, we can reconstruct JSON and text files.
 ```json
 {
     "arrow11": {
@@ -128,7 +132,8 @@ SMILES:
 C=Cc1ccc2[nH]cc(C[C@H](N)C(=O)OF)c2c1>>C/C=C(\\C)CN1C2CCC(=O)[C@]1(C)Cc1c2[nH]c2ccc(C)cc12.O>>molecule8>>molecule5>>BCc1ccc2[nH]c3c(c2c1-c1c(O)ccc(C)c1C1=C(C)C2CC4/C(=C\\C)CN2C(C1)C4CC)CC1C(CC)C24CC3N1[C@@H]2/C4=C/C.C.CC=O.CC=O>>C=C1CC2(C#N)C3(C)CC1C1CCNC12CC1=C3Cc2ccc(C)c(-c3c([O-])ccc4[nH]c5c(c34)CC3C[C@H]4C5(C)CC(C)([C@@H](C)CCO)C34CC3CC3)c21
 ```
 
-
+## Benchmarking
+The synthetic training data set was benchmarked with well-established CNNs and a feature detector approach. As a one-stage detector, RetinaNet. As a two-stages detector, Faster-RCNN. However, DETR with default training schedules performed slightly better. Check the metrics comparison in the folder: plots.
 ## Contributing
 DETR - https://github.com/facebookresearch/detectron2
 
