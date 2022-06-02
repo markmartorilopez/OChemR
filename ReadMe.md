@@ -137,7 +137,7 @@ C=Cc1ccc2[nH]cc(C[C@H](N)C(=O)OF)c2c1>>C/C=C(\\C)CN1C2CCC(=O)[C@]1(C)Cc1c2[nH]c2
 The synthetic training data set was benchmarked with well-established CNNs and a feature detector approach. As a one-stage detector, RetinaNet. As a two-stages detector, Faster-RCNN. However, DETR with default training schedules performed slightly better. Check the metrics comparison in the folder: plots.
 
 <p align="center">
-  <p align="center">mAP per class and model</p>
+  <p align="center">mAP score per class and model (%)</p>
   <a>
     <img src="github/images/perclass.png" alt="mAP per class per model" width=450 height=320>
   </a>
