@@ -1,8 +1,0 @@
-conda install:
-
-- opencv
-- pandas
-- numpy
-- pillow
-- tqdm
-- rdkit

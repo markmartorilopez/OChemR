@@ -16,26 +16,26 @@ p = os.path.abspath('../')
 sys.path.append(p)
 
 # ViT - Detect Objects in image (Molecules - Arrows/+ - Text)
-from retrieveSMILES.functions.detr_inference import detr_inference
+from Backend.functions.detr_inference import detr_inference
 from detr.models import build_model
 
 # OCR - Get text from detected Text bboxes from ViT.
 from doctr.models import ocr_predictor
 from doctr.io import DocumentFile
-from retrieveSMILES.functions.text_img2text import extractText
+from Backend.functions.text_img2text import extractText
 from doctr.models import recognition_predictor
 
 # Molvec - Translate Molecules to SMILES
-from retrieveSMILES.functions.mol2smiles import img_to_smiles
+from Backend.functions.mol2smiles import img_to_smiles
 import cv2
 
 # Read Direction of images
-from retrieveSMILES.functions.findArrows import get_arrow_direction
-from retrieveSMILES.functions.finDirection import findClosestType,groupMolecules,orderArrows
+from Backend.functions.findArrows import get_arrow_direction
+from Backend.functions.finDirection import findClosestType,groupMolecules,orderArrows
 import json
 
 # Output
-from retrieveSMILES.functions.storeresults import storeResults
+from Backend.functions.storeresults import storeResults
 
 #### ARGUMENTS
 def get_args_parser():
@@ -199,7 +199,7 @@ def main(args_detr):
             boxes_dict[step] = [int(x),int(y),int(w),int(h)]   # Store coordinates of the bbox. Key = index.
             label = labels[step]                               # Store label of that bbox.
             x,y,w,h = int(x),int(y),int(w),int(h)              # Convert bbox coords. to int.
-            padd = 5                                           # If possible, crop bbox with a 5-padding.
+            padd = 5                                           # If possible, crop bbox with a 5+padding.
             if x- padd >= 0 and y - padd >= 0 and w + padd <= width and h + padd <= height:
                 new_img = img[y - padd:h + padd, x - padd :w + padd]
             else:                                              # If not possible, crop the proper bbox.

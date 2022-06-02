@@ -141,6 +141,28 @@ The synthetic training data set was benchmarked with well-established CNNs and a
   </a>
 </p>
 
+## Installation
+- Make sure to have all requirements.txt installed.
+
+- git clone https://github.com/facebookresearch/detr.git
+
+- git clone https://github.com/mindee/doctr.git
+
+## Models - Training - Evaluation - Inference
+Download the [DETR_Resnet50](https://drive.google.com/drive/folders/1ZIMEQseSTqTmheKGDSijwD8lM0hgrMor?usp=sharing) model.
+
+### Create synthetic data set and train DETR:
+- Follow steps in arrow_78/README.md file.
+
+### Evaluation
+- DETR/detr/:
+    - python3 main.py --batch_size 8 --no_aux_loss --eval --resume "output/checkpoint.pth" --arrow_path "images/val/" --output_dir "output/"
+
+### Inference
+- DETR/detr/:
+    - python3 attention_DETR.py --resume output/checkpoint.pth
+
+
 ## Contributing
 DETR - https://github.com/facebookresearch/detectron2
 
