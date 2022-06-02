@@ -24,8 +24,8 @@
 - [Description](#Description)
 - [Step by step](#step-by-step)
 - [Benchmarking](#benchmarking)
-- [Installation](#installation) Coming soon... (6-6-22)
-- [Models](#models) Coming soon... (6-6-22)
+- [Installation](#installation)
+- [Models](#Models - Training - Evaluation - Inference)
 - [Contributing](#contributing)
 - [Creators](#creators)
 - [Thanks](#thanks)
@@ -149,7 +149,7 @@ The synthetic training data set was benchmarked with well-established CNNs and a
 - git clone https://github.com/mindee/doctr.git
 
 ## Models - Training - Evaluation - Inference
-Download the [DETR_Resnet50](https://drive.google.com/drive/folders/1ZIMEQseSTqTmheKGDSijwD8lM0hgrMor?usp=sharing) model.
+Download the [DETR_Resnet50](https://drive.google.com/drive/folders/1ZIMEQseSTqTmheKGDSijwD8lM0hgrMor?usp=sharing) model and move the file to DETR/detr/output/checkpoint.pth
 
 ### Create synthetic data set and train DETR:
 - Follow steps in arrow_78/README.md file.
