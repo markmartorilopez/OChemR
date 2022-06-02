@@ -25,7 +25,7 @@
 - [Step by step](#step-by-step)
 - [Benchmarking](#benchmarking)
 - [Installation](#installation)
-- [Models](#Models - Training - Evaluation - Inference)
+- [Models - Training - Evaluation - Inference](#Models)
 - [Contributing](#contributing)
 - [Creators](#creators)
 - [Thanks](#thanks)
