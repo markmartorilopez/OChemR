@@ -95,7 +95,7 @@ Towards recognizing the information present in the molecule objects detected, we
 </p>
 
 ### 4 - Pixel Magic
-In pursuance of preserving the real path of the whole reaction, the direction of the arrows detected was exctracted.
+In pursuance of preserving the real path of the whole reaction, the direction of the arrows detected was extracted.
 
 <p align="center">
   <a>
