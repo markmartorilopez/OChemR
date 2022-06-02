@@ -148,7 +148,7 @@ The synthetic training data set was benchmarked with well-established CNNs and a
 
 - git clone https://github.com/mindee/doctr.git
 
-## Models - Training - Evaluation - Inference
+## Models
 Download the [DETR_Resnet50](https://drive.google.com/drive/folders/1ZIMEQseSTqTmheKGDSijwD8lM0hgrMor?usp=sharing) model and move the file to DETR/detr/output/checkpoint.pth
 
 ### Create synthetic data set and train DETR:
