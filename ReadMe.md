@@ -126,6 +126,7 @@ Aggregating the aforementioned steps outcome, we can reconstruct JSON and text f
     }
 }
 ```
+
 ```text
 Reaction X
 
@@ -163,11 +164,6 @@ Download the [DETR_Resnet50](https://drive.google.com/drive/folders/1ZIMEQseSTqT
 ### Inference
 - DETR/detr/:
     - python3 attention_DETR.py --resume output/checkpoint.pth
-
-### End-to-End OChemR (From image to JSON)
-- Backend/:
-    - Store detections and visualize encoder-decoder attention in --output_dir/--detection_dir folder and JSON files in --output_dir/:
-      - python3 main.py --data_path images/ --resume /detr/output/checkpoint.pth --detection_dir detections/ --output_dir output/ --device_detr cpu
 
 ## Contributing
 DETR - https://github.com/facebookresearch/detectron2
