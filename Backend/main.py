@@ -111,7 +111,7 @@ def get_args_parser():
 
     parser.add_argument('--device_detr', default='cpu',
                         help='device to use for training / testing')
-    parser.add_argument('--resume', default = '/u/markmartori/detr/output/loss1_7.pth', help='resume from checkpoint')
+    parser.add_argument('--resume', default = 'detr/output/checkpoint.pth', help='resume from checkpoint')
 
     parser.add_argument('--thresh', default=0.98, type=float)
     #### ----- End ViT. ---------------
@@ -279,7 +279,7 @@ def main(args_detr):
                     print(f"Middle text = {textinf}")
                     print(f"Post mol = {postmol}")
                 
-        final_ordered_reaction,SMILESresult = orderArrows(unorderedReaction)    # Order unordered dictionary.
+        final_ordered_reaction, SMILESresult = orderArrows(unorderedReaction)    # Order unordered dictionary.
         if final_ordered_reaction:
             storeResults(final_ordered_reaction, filename, args_detr.output_dir) # Store results as Json
 
@@ -288,6 +288,7 @@ def main(args_detr):
         timefin = time.time()
         if debugging:
             print(f"Total time to translate, find direction and assemble = {abs(timefin - timest)}s.")
+
 
 if __name__ == '__main__':
     parser_detr = argparse.ArgumentParser("ARROW Project - Retrieve SMILES from images.", parents=[get_args_parser()])
