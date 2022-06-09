@@ -8,7 +8,7 @@
     <br>
     <a>V.0</a>
     ·
-    <a href="https://www.zurich.ibm.com">IBM Research Zurich</a>
+    <a href="https://www.zurich.ibm.com">IBMResearch Zurich</a>
   </p>
 </p>
 
