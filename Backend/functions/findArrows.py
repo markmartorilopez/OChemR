@@ -228,7 +228,7 @@ def get_arrow_direction(img,img_path,step, debugging = False):
         x1,y1 = corners_clean[0]
         x2,y2 = corners_clean[1]
 
-        radius = get_max_radius(bwimg,[(x1,y1),(x2,y2)])            # Same as before: get radius
+        radius = get_min_radius(bwimg,[(x1,y1),(x2,y2)])            # Same as before: get radius
         first_n_pixels = np.sum(get_roi((x1,y1),bwimg, init_r = radius))
         n_pixels = np.sum(get_roi((x2,y2),bwimg, init_r = radius))  # Compute ROI sum
 
