@@ -1,6 +1,5 @@
 # Copyright (c) 2022 rxn4chemistry - Daniel Probst & Mark Martori Lopez
 
-import rdkit
 from rdkit import Chem
 from rdkit.Chem import MolToSmiles, MolFromMolBlock
 import cv2

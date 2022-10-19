@@ -8,8 +8,6 @@ import random
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-import torchvision.transforms as T
-import time
 p = os.path.abspath('../detr/')
 sys.path.append(p)
 from datasets.arrow import make_arrow_transforms

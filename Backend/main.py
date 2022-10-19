@@ -226,7 +226,7 @@ def main(args_detr):
                 # EasyOCR
                 result = reader.readtext(textname, detail = 0)
                 try:
-                    SMILES_dict[step] = result                  # Store text
+                    SMILES_dict[step] = result
                 except:
                     SMILES_dict[step] = " "
 

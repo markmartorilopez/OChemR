@@ -2,9 +2,7 @@
 
 import numpy as np
 import cv2
-import glob
 import os
-import pathlib
 
 def get_min_radius(img,points):
     """
