@@ -20,10 +20,7 @@ from Backend.functions.detr_inference import detr_inference
 from detr.models import build_model
 
 # OCR - Get text from detected Text bboxes from ViT.
-from doctr.models import ocr_predictor
-from doctr.io import DocumentFile
-from Backend.functions.text_img2text import extractText
-from doctr.models import recognition_predictor
+import easyocr
 
 # Molvec - Translate Molecules to SMILES
 from Backend.functions.mol2smiles import img_to_smiles
@@ -175,10 +172,10 @@ def main(args_detr):
         model.load_state_dict(checkpoint['model'])
     model.to(device_detr)
 
-    ## 2: Load OCR for text_imgs  - DocTr --------------------
-    ocr_model = ocr_predictor(det_arch='db_resnet50', reco_arch='crnn_vgg16_bn', pretrained=True, assume_straight_pages = True)
+    ## 2: Load OCR for text_imgs  - EasyOCR --------------------
+    reader = easyocr.Reader(['en']) #, gpu= gpu # this needs to run only once to load the model into memory
 
-    print(f"DETR Inference ...")
+    print("DETR Inference ...")
     # Run detr inference
     detr_outputs = detr_inference(img_files, model, device_detr, detection_path, threshold)
 
@@ -226,9 +223,12 @@ def main(args_detr):
             elif label == 2:                                   # Text - OCR - DocTr 
                 textname = "text_images/"+filename.replace(".",str(step)+".")
                 cv2.imwrite(textname,new_img)
-                doc = DocumentFile.from_images(textname)       # Convert bbox as image:
-                result = ocr_model(doc)                        # Get text from image - OCR.
-                SMILES_dict[step] = extractText(result)        # Store text in a desired format.
+                # EasyOCR
+                result = reader.readtext(textname, detail = 0)
+                try:
+                    SMILES_dict[step] = result                  # Store text
+                except:
+                    SMILES_dict[step] = " "
 
             else: # + symbol.
                 SMILES_dict[step] = "."
