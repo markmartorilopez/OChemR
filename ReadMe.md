@@ -35,6 +35,10 @@
 ## Description
 From a chemical reaction image, detect and classify molecules, text and arrows by using a Vision Transformer (DETR). The detections are then translated into text "OCR" or into SMILES. The direction of the reaction is detected and preserved into the output file.
 
+TRY THE COMPLETE VERSION OUT AT:
+https://rxn.app.accelerate.science/rxn/
+under "Optical Chemical Recognition".
+
 Output:
 
 ```text
